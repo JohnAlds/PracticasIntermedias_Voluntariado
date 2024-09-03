@@ -1,11 +1,11 @@
-const mysql = require('mysql2/promise'); // Usa 'mysql2/promise' para soporte de promesas
+const mysql = require('mysql2/promise'); 
 
 const dbConfig = {
-  host: 'mysql',          // Nombre del servicio en Docker Compose
-  user: 'johnalds',              // Reemplaza con tu usuario de MySQL
-  password: '04122013D',     // Reemplaza con tu contraseña de MySQL
-  database: 'TODOS',         // Reemplaza con el nombre de tu base de datos
-  port: 3307                 // Puerto dentro del contenedor de MySQL
+  host: '127.0.0.1',                      
+  user: 'root',               
+  password: 'whillm@n1324@@UING@',          
+  database: 'user',              
+  port: 3306                    
 };
 
 const dbConnection = async () => {
