@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+    ports:
+      - "8080:8080"
+    environment:
+      - MYSQL_HOST=db
+      - MYSQL_USER=databaseuser
+      - MYSQL_PASSWORD=1324
+      - MYSQL_DATABASE=mydatabase
+    depends_on:
+      - db
+
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: mydatabase
+    ports:
+      - "3306:3306"  # Cambiar el puerto local a 3307
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
